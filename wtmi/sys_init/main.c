@@ -346,7 +346,10 @@ int main(int exception, char **dummy)
 	* initialization work, PC address will jump back to WTMI runing image
 	* start address 0x1fff0000.
 	*/
-	__asm__ volatile("bl 0x1fff0000\n");
+	__asm__ volatile(
+		"ldr r0, =0x1fff0000\n"
+		"blx r0\n"
+	);
 
 	return NO_ERROR;
 }
