@@ -38,7 +38,9 @@ typedef short			s16;
 typedef char			s8;
 typedef char			byte;
 
+#if !defined(__STDC_VERSION__) || __STDC_VERSION__ < 202311L
 typedef int bool;
+#endif
 
 #define	NULL			((void *)0)
 
