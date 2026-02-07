@@ -44,6 +44,7 @@ $(SYS_INIT_IMG): $(WTMI_PAD_IMG) FORCE
 $(WTMI_PAD_IMG): $(WTMI_IMG_REL)
 	$(MKDIR) $(BINPATH)
 	cp -f $(WTMI_IMG_REL) $(WTMI_PAD_IMG)
+	chmod +w $(WTMI_PAD_IMG)
 	truncate -s %16 $(WTMI_PAD_IMG)
 
 $(FUSE_IMG): FORCE
