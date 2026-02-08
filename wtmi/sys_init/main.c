@@ -346,10 +346,12 @@ int main(int exception, char **dummy)
 	* initialization work, PC address will jump back to WTMI runing image
 	* start address 0x1fff0000.
 	*/
+	printf("Ready to jump to wtmi.bin\n", VERSION);
 	__asm__ volatile(
 		"ldr r0, =0x1fff0000\n"
 		"blx r0\n"
 	);
+	printf("Return from wtmi.bin\n", VERSION);
 
 	return NO_ERROR;
 }
